@@ -1,0 +1,168 @@
+<!-- SYST24444 Assignment2
+     Project name: My Recipe APP
+     Author: Wenya Guo 991661274
+     Date: Feb 18, 2023-->
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wenya Guo 991661274</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/themes/ReceipeApp.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css"
+    />
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+      <!-- Header-->
+      <div data-role="header" style="text-align: center">
+        <h1 class="headertext">My Recipe APP</h1>
+        <p>Wenya Guo 991661274</p>
+        <img src="img/Phote.jpg" alt="photo" width="15%" />
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#home" data-transition="slideUp">My Recipes</a></li>
+            <li><a href="#create" data-transition="slideUp">Create</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div data-role="main" class="ui-content">
+        <ul
+          id="recipes"
+          data-role="listview"
+          data-split-icon="delete"
+          data-inset="true"
+        ></ul>
+        <button id="clearBtn">Clear Recipes</button>
+      </div>
+
+      <!-- Footer -->
+      <div data-role="footer" style="text-align: center">
+        <p>guowen, Trafalgar Campus &copy; 2023</p>
+      </div>
+    </div>
+
+    <!-- Create Recipe Page -->
+    <div data-role="page" id="create" data-theme="b">
+      <!-- Header-->
+      <div data-role="header" style="text-align: center">
+        <h1>My Recipe APP</h1>
+        <p>Wenya Guo 991661274</p>
+        <img src="img/Phote.jpg" alt="photo" width="15%" />
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#home" data-transition="slideUp">My Recipes</a></li>
+            <li><a href="#create" data-transition="slideUp">Create</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div data-role="main" class="ui-content">
+        <form id="recipeform">
+          <label for="dishname">Dish Name*</label>
+          <input type="text" id="dishname" required />
+          <label for="type">Cooking Level*</label>
+          <select id="type" required>
+            <option value="Hard">Hard</option>
+            <option value="Middle">Middle</option>
+            <option value="Easy">Easy</option>
+          </select>
+          <label for="ingred">Ingredients*</label>
+          <input type="text" id="ingred" />
+          <button
+            id="addIngredBtn"
+            class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-plus"
+          >
+            Add New Ingredients (Max:7)
+          </button>
+          <label for="calories">Calories*</label>
+          <input type="number" id="calories" />
+
+          <label for="description">Description*</label>
+          <textarea id="description"></textarea>
+
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <span>Desert</span>
+            <div class="ui-controlgroup-controls">
+              <div class="ui-radio">
+                <label
+                  for="radio-choice-a1"
+                  class="ui-btn ui-corner-all ui-btn-inherit ui-first-child ui-btn-active ui-radio-on"
+                  >Yes</label
+                >
+                <input
+                  type="radio"
+                  name="radio-choice"
+                  id="radio-choice-a1"
+                  value="Yes"
+                  data-cacheval="true"
+                />
+              </div>
+              <div class="ui-radio">
+                <label
+                  for="radio-choice-b1"
+                  class="ui-btn ui-corner-all ui-btn-inherit ui-last-child ui-radio-off"
+                >
+                  No
+                </label>
+                <input
+                  type="radio"
+                  name="radio-choice"
+                  id="radio-choice-b1"
+                  value="No"
+                  checked="checked"
+                  data-cacheval="true"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <input type="submit" value="save" />
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <div data-role="footer" style="text-align: center">
+        <p>guowen, Trafalgar Campus &copy; 2023</p>
+      </div>
+    </div>
+
+    <!-- Recipe Detail Page -->
+    <div data-role="page" id="recipe">
+      <!-- Header-->
+      <div data-role="header" style="text-align: center">
+        <h1>My Recipe APP</h1>
+        <p>Wenya Guo 991661274</p>
+        <img src="img/Phote.jpg" alt="photo" width="15%" />
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#home" data-transition="slideUp">My Recipes</a></li>
+            <li><a href="#create" data-transition="slideUp">Create</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div data-role="main" class="ui-content">
+        <div id="recipeDetails"></div>
+      </div>
+
+      <!-- Footer -->
+      <div data-role="footer" style="text-align: center">
+        <p>guowen, Trafalgar Campus &copy; 2023</p>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
